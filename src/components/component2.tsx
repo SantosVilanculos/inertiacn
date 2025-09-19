@@ -39,7 +39,7 @@ function Component2() {
 
             <div className="">
                 <Input
-                    defaultValue={`pnpm dlx shadcn@latest add ${import.meta.env.DEV ? window.location.origin : import.meta.env.NEXT_PUBLIC_BASE_URL}/r/use-route.json`}
+                    defaultValue={`pnpm dlx shadcn@latest add ${import.meta.env.DEV ? window.location.origin : import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL}/r/use-route.json`}
                     readOnly
                 />
             </div>

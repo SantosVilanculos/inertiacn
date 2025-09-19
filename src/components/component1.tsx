@@ -14,7 +14,7 @@ function Component1() {
 
             <div className="">
                 <Input
-                    defaultValue={`pnpm dlx shadcn@latest add ${import.meta.env.DEV ? window.location.origin : import.meta.env.NEXT_PUBLIC_BASE_URL}/r/form.json`}
+                    defaultValue={`pnpm dlx shadcn@latest add ${import.meta.env.DEV ? window.location.origin : import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL}/r/form.json`}
                     readOnly
                 />
             </div>

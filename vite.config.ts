@@ -12,5 +12,7 @@ export default defineConfig({
             '@': fileURLToPath(new URL('./src', import.meta.url))
         }
     },
-    envPrefix: ['VITE_', 'NEXT_PUBLIC_']
+    define: {
+        'process.env.VITE_VERCEL_PROJECT_PRODUCTION_URL': JSON.stringify(process.env.VERCEL_PROJECT_PRODUCTION_URL)
+    }
 });
