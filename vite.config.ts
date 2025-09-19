@@ -13,6 +13,6 @@ export default defineConfig({
         }
     },
     define: {
-        'process.env.VITE_VERCEL_PROJECT_PRODUCTION_URL': JSON.stringify(process.env.VERCEL_PROJECT_PRODUCTION_URL)
+        'process.env.VITE_VERCEL_PROJECT_PRODUCTION_URL': `https://${JSON.stringify(process.env.VERCEL_PROJECT_PRODUCTION_URL)}`
     }
 });
