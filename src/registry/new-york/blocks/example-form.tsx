@@ -1,8 +1,8 @@
 'use client';
 
-import { Button } from '@/_/vite-project/components/ui/button';
-import { Input } from '@/_/vite-project/components/ui/input';
-import { Label } from '@/_/vite-project/components/ui/label';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Form } from '@/registry/new-york/ui/form';
 import { Link } from '@inertiajs/react';
 import { LoaderCircleIcon } from 'lucide-react';
