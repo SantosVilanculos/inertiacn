@@ -16,6 +16,20 @@
                     "type": "registry:component"
                 }
             ]
+        },
+        {
+            "name": "use-route",
+            "type": "registry:hook",
+            "title": "useRoute",
+            "description": "A route hook.",
+            "dependencies": ["@inertiajs/react"],
+            "registryDependencies": [],
+            "files": [
+                {
+                    "path": "src/registry/new-york/hooks/use-route.tsx",
+                    "type": "registry:hook"
+                }
+            ]
         }
     ]
 }

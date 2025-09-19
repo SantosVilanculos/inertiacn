@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-route",
+  "type": "registry:hook",
+  "title": "useRoute",
+  "description": "A route hook.",
+  "dependencies": [
+    "@inertiajs/react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/new-york/hooks/use-route.tsx",
+      "content": "import { router, usePage } from '@inertiajs/react';\nimport * as React from 'react';\n\ntype PageProps<TParams extends Record<string, unknown>, TQuery extends Record<string, unknown>> = {\n    route: {\n        name: string | null;\n        params: TParams | null;\n        query: TQuery | null;\n    };\n};\n\nfunction useRoute<\n    TParams extends Record<string, unknown> = Record<string, unknown>,\n    TQuery extends Record<string, unknown> = Record<string, unknown>\n>() {\n    const { props } = usePage<PageProps<TParams, TQuery>>();\n\n    const named = React.useCallback(\n        (name: string) => {\n            if (props.route.name === null) return false;\n\n            if (props.route.name === name) {\n                return true;\n            }\n\n            if (name.endsWith('*')) {\n                return props.route.name.startsWith(name.slice(0, -1));\n            }\n\n            return false;\n        },\n        [props.route.name]\n    );\n\n    const params = React.useMemo(() => props.route.params || ({} as TParams), [props.route.params]);\n    const query = React.useMemo(() => props.route.query || ({} as TQuery), [props.route.query]);\n\n    const [hash, setHash] = React.useState<string | null>(window.location.hash || null);\n    const [path, setPath] = React.useState(window.location.pathname);\n    const [fullPath, setFullPath] = React.useState(window.location.href.replace(window.location.origin, ''));\n\n    React.useEffect(() => {\n        const listener = (event: HashChangeEvent) => {\n            const { hash, href, origin } = new URL(event.newURL);\n            setHash(hash || null);\n            setFullPath(href.replace(origin, ''));\n        };\n\n        window.addEventListener('hashchange', listener);\n\n        return () => {\n            window.removeEventListener('hashchange', listener);\n        };\n    }, []);\n\n    React.useEffect(() => {\n        return router.on('navigate', () => {\n            const { hash, pathname, href, origin } = window.location;\n            setHash(hash || null);\n            setPath(pathname);\n            setFullPath(href.replace(origin, ''));\n        });\n    }, []);\n\n    return {\n        name: props.route.name,\n        named,\n        params,\n        query,\n        hash,\n        path,\n        fullPath\n    };\n}\n\nexport { useRoute };\n",
+      "type": "registry:hook"
+    }
+  ]
+}
