@@ -1,0 +1,29 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "rewrites": [
+        {
+            "source": "/assets/(.*)",
+            "destination": "/assets/$1"
+        },
+        {
+            "source": "/r/(.*)",
+            "destination": "/r/$1"
+        },
+        {
+            "source": "/favicon.ico",
+            "destination": "/favicon.ico"
+        },
+        {
+            "source": "/favicon.svg",
+            "destination": "/favicon.svg"
+        },
+        {
+            "source": "/og.jpg",
+            "destination": "/og.jpg"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
+}
