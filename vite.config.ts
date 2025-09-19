@@ -11,8 +11,8 @@ export default defineConfig({
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
         }
-    },
-    define: {
-        'process.env.VITE_VERCEL_PROJECT_PRODUCTION_URL': `https://${JSON.stringify(process.env.VERCEL_PROJECT_PRODUCTION_URL)}`
     }
+    // define: {
+    //     'process.env.VITE_VERCEL_PROJECT_PRODUCTION_URL': `https://${JSON.stringify(process.env.VERCEL_PROJECT_PRODUCTION_URL)}`
+    // }
 });
