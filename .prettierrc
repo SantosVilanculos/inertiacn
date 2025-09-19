@@ -1,0 +1,21 @@
+{
+    "arrowParens": "avoid",
+    "htmlWhitespaceSensitivity": "css",
+    "overrides": [
+        {
+            "files": "./**/*.yml",
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ],
+    "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
+    "printWidth": 150,
+    "semi": true,
+    "singleAttributePerLine": false,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "tailwindFunctions": ["clsx", "cn"],
+    "tailwindStylesheet": "./app/index.css",
+    "trailingComma": "none"
+}
