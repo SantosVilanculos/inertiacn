@@ -18,6 +18,7 @@ class HandleInertiaRequests extends Middleware
     {
         return [
             ...parent::share($request),
+            //
             'route' => [
                 'name' => $request->route()->getName(),
                 'params' => $request->route()->originalParameters() ?: null,

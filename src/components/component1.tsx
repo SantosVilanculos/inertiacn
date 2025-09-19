@@ -21,7 +21,7 @@ function Component1() {
 
             <div className="">@/components/form.tsx</div>
 
-            <ScrollArea className="min-h border-border aspect-square overflow-auto rounded-md border">
+            <ScrollArea className="min-h border-border aspect-video overflow-auto rounded-md border">
                 <Dump value={value} />
 
                 <ScrollBar orientation="horizontal" />
